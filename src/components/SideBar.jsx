@@ -13,9 +13,9 @@ const SideBar = () => {
 
     return (
     <motion.nav
-      className="flex flex-col items-center justify-between left-0 
-        w-[3.8rem] h-[80vh] mt-16 bg-blue-500  
-        rounded-tr-3xl rounded-br-3xl object-none"
+      className="flex flex-col fixed items-center justify-between left-0 
+        w-[3.8rem] h-[80vh] mt-16
+        rounded-tr-3xl rounded-br-3xl object-none bg-gradient-to-t from-cyan-100 to-blue-400 bg-cover"
     >
         <button onClick={() => navigate('/')} >
             
