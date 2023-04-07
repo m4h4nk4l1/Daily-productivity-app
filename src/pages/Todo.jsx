@@ -22,6 +22,7 @@ const Todo = () => {
     function handleSubmit(event){
       event.preventDefault();
       addTask(title);
+      setTitle("");
     }
 
     function changeTitle(event){
@@ -52,7 +53,7 @@ const Todo = () => {
           />
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold font-shan py-2 px-4 rounded flex align-middle items-center"
-            type="submit" onAddTask={addTask}
+            type="submit"
           >
             Create <AiOutlinePlusCircle className="ml-1" size={20} />
           </button>
@@ -87,24 +88,25 @@ const Todo = () => {
         </header>
 
         {/* this section is for the tasks that we get we call task */}
+    <>
+    {
+      tasks.map(task => (
+  <section className="flex flex-col ">
+    <div className="flex flex-row m-auto top-4 pl-5 bg-blue-300 font-shan space-y-4 overflow-auto border rounded-md border-slate-700 my-8 w-[60%]">
+      <button>
+        <BsFillCheckCircleFill />
+      </button>
+      <p className="items-center ">{task.title}</p>
+      <button>
+        <TbTrash className="content-end " size={20} />
+      </button>
+    </div>
+  </section>
+      ))
+    }
+    </>
+</section>
 
-        <section className="flex flex-col ">
-          <div className="flex flex-row m-auto top-4 pl-5 bg-blue-300 font-shan space-y-4 overflow-auto border rounded-md border-slate-700 my-8 w-[60%]">
-            <button>
-              <BsFillCheckCircleFill />
-            </button>
-            {
-              tasks.map((task) => (
-                key={task.id}, task={task}
-              ))
-            }
-            <p className="items-center ">{task.title}</p>
-            <button>
-              <TbTrash className="content-end " size={20} />
-            </button>
-          </div>
-        </section>
-      </section>
 
       <Link to="/todo"></Link>
     </motion.div>
