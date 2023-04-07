@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import todo from "../assets/todo.jpg";
@@ -8,8 +8,26 @@ import { TbTrash } from "react-icons/tb";
 
 const Todo = () => {
 
-    
+    const [tasks, setTasks] = useState([]);
+    const [title, setTitle] = useState("");
 
+    function addTask(taskTitle){
+      setTasks([...tasks,{
+        id: crypto.randomUUID(),
+        title: taskTitle,
+        isCompleted: false
+      }])
+    }
+
+    function handleSubmit(event){
+      event.preventDefault();
+      addTask(title);
+    }
+
+    function changeTitle(event){
+      setTitle(event.target.value);
+
+    }
 
   return (
     <motion.div
@@ -26,15 +44,15 @@ const Todo = () => {
           <img className="w-20 h-auto" src={todo} alt="todo-icon" />
           <h2 className="font-shan text-2xl"> TODO </h2>
         </header>
-        <form className="flex flex-row justify-center mb-6 ">
+        <form onSubmit={handleSubmit} className="flex flex-row justify-center mb-6 ">
           <input
             type="text"
             className=" w-[60%] mr-4 text-start placeholder: pl-2 bg-blue-300 placeholder-slate-700 text-black font-shan rounded-sm"
-            placeholder="Add a New Task"
+            placeholder="Add a New Task" value={title} onChange={changeTitle}
           />
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold font-shan py-2 px-4 rounded flex align-middle items-center"
-            type="submit"
+            type="submit" onAddTask={addTask}
           >
             Create <AiOutlinePlusCircle className="ml-1" size={20} />
           </button>
@@ -75,7 +93,12 @@ const Todo = () => {
             <button>
               <BsFillCheckCircleFill />
             </button>
-            <p className="items-center ">hey there this is the task Created</p>
+            {
+              tasks.map((task) => (
+                key={task.id}, task={task}
+              ))
+            }
+            <p className="items-center ">{task.title}</p>
             <button>
               <TbTrash className="content-end " size={20} />
             </button>
