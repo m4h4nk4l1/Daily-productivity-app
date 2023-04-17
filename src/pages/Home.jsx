@@ -7,10 +7,10 @@ const Home = () => {
     <motion.div
     initial={{ height: 0 }}
     animate={{ height: "100%" }}
-    exit={{ y: window.innerHeight, trasition: { duration: 0.2 } }}
+    exit={{ y: window.innerHeight, transition: { duration: 0.2 } }}
       className="bg-gradient-to-b min-h-screen font-shan from-cyan-100 to-blue-400 bg-cover text-2xl"
     >
-      <Link to="/"></Link>
+      {/* <Link to="/"></Link> */}
       <div className='ml-80 pt-44 max-w-[75%] h-full text-xl' id="intro">
         <p className='mb-8'>
           Hi, my name is
