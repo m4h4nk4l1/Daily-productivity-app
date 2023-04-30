@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const MusicControls = () => {
-  return (
-    <div>MusicControls</div>
-  )
-}
+  return <div></div>;
+};
 
-export default MusicControls
+export default MusicControls;
