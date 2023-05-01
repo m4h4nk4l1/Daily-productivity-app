@@ -10,16 +10,18 @@ const Projects = () => {
       initial={{ height: 0 }}
       animate={{ height: "100%" }}
       exit={{ y: window.innerHeight, transition: { duration: 0.2 } }}
-      className="bg-gradient-to-b min-h-screen from-cyan-100 to-blue-400 text-xl font-shan"
+      className="bg-gradient-to-b min-h-screen from-cyan-100 to-blue-400 text-md font-shan"
     >
       <div className="mx-40 h-[100%]">
-        <h2 className="font-semibold text-4xl pt-8">Projects I'm proud of</h2>
+        <h2 className="font-semibold text-3xl mb-8 pt-8">
+          Projects I'm proud of
+        </h2>
 
         {/* project 1 */}
 
-        <section class="pt-8 flex flex-row-reverse">
+        <section class="pt-8 flex mb-8 flex-row-reverse">
           <div className="text">
-            <h4 className="text-2xl font-semibold">Crypto Explorer site</h4>
+            <h4 className="text-xl font-semibold">Crypto Explorer site</h4>
             <p className="">
               Description of the project. This should be fairly concise while
               also describing the key components that you developed or worked
@@ -52,9 +54,9 @@ const Projects = () => {
 
         {/* project 2 */}
 
-        <section className="pt-8 flex flex-row">
+        <section className="pt-8 flex mb-8 flex-row">
           <div>
-            <h3 className="text-2xl font-semibold">Construction Materials</h3>
+            <h3 className="text-xl font-semibold">Construction Materials</h3>
             <p>
               It is a online purchasing construction material ecommerce site
               where you can purchase different construction materials of
@@ -85,9 +87,9 @@ const Projects = () => {
 
         {/* project 3 */}
 
-        <section className="pt-8 flex flex-row-reverse">
+        <section className="pt-8 mb-8 flex flex-row-reverse">
           <div>
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl font-semibold">
               Multiple Javascript Features
             </h3>
             <p>
@@ -134,10 +136,10 @@ const Projects = () => {
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-1 0A7 7 0 1 0 1 8a7 7 0 0 0 14 0z" />
             </svg>
 
-            <h1 className="text-4xl font-bold uppercase text-black transition duration-500">
+            <h1 className="text-3xl font-bold uppercase text-black transition duration-500">
               Coming Soon
             </h1>
-            <h2 className="text-xl text-black font-semibold">
+            <h2 className="text-lg text-black font-semibold">
               I Building more. Checkout later.......
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
