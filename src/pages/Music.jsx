@@ -73,6 +73,7 @@ const Shazam = () => {
           <ReactPlayer
             width="110%"
             height="124%"
+            playing="true"
             loop="true"
             url={video}
             frameborder="0"
