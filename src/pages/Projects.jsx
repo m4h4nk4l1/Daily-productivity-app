@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import code from "../assets/code.png";
+import crypto from "../assets/crypto-market.png";
 import project1 from "../assets/project1.png";
-import javascriptproject from "../assets/javascript-projects.png";
+import javascriptproject from "../assets/javascript-project.png";
 const Projects = () => {
   return (
     <motion.div
@@ -20,7 +20,7 @@ const Projects = () => {
         {/* project 1 */}
 
         <section class="pt-8 flex mb-8 flex-row-reverse">
-          <div className="text">
+          <div className="text ml-8 flex flex-col">
             <h4 className="text-xl font-semibold">Crypto Explorer site</h4>
             <p className="">
               Description of the project. This should be fairly concise while
@@ -44,7 +44,7 @@ const Projects = () => {
             </ul>
           </div>
           <img
-            src={code}
+            src={crypto}
             width="700"
             height="380"
             alt="Screenshot of code."
@@ -60,12 +60,13 @@ const Projects = () => {
             <p>
               It is a online purchasing construction material ecommerce site
               where you can purchase different construction materials of
-              different brands listed. It is a frontend website with
+              different brands listed. It is a frontend website you can access
+              it{" "}
               <a
                 className="underline decoration-auto hover:no-underline"
                 href="https://github.com/m4h4nk4l1/reactJS-construction"
               >
-                Link
+                Here
               </a>
               .
             </p>
@@ -88,7 +89,7 @@ const Projects = () => {
         {/* project 3 */}
 
         <section className="pt-8 mb-8 flex flex-row-reverse">
-          <div>
+          <div className="ml-8">
             <h3 className="text-xl font-semibold">
               Multiple Javascript Features
             </h3>
