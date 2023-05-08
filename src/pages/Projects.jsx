@@ -10,7 +10,7 @@ const Projects = () => {
       initial={{ height: 0 }}
       animate={{ height: "100%" }}
       exit={{ y: window.innerHeight, transition: { duration: 0.2 } }}
-      className="bg-gradient-to-b min-h-screen from-cyan-100 to-blue-400 text-md font-shan"
+      className="bg-gradient-to-b min-h-screen from-cyan-100 to-blue-400 text-md text-black font-shan"
     >
       <div className="mx-40 h-[100%]">
         <h2 className="font-semibold text-3xl mb-8 pt-8">

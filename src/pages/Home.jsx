@@ -8,7 +8,7 @@ const Home = () => {
       initial={{ height: 0 }}
       animate={{ height: "100%" }}
       exit={{ y: window.innerHeight, transition: { duration: 0.2 } }}
-      className="bg-gradient-to-b min-h-screen font-shan from-cyan-100 to-blue-400 bg-cover text-2xl"
+      className="bg-gradient-to-b min-h-screen font-shan from-cyan-100 to-blue-400 bg-cover text-black text-2xl"
     >
       {/* <Link to="/"></Link> */}
       <div className="text-sm flex flex-row space-x-2 items-center justify-end mr-20 pt-4">

@@ -5,15 +5,14 @@ import tasks from "../assets/edit.png";
 import music from "../assets/music.png";
 import projects from "../assets/projects.png";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const SideBar = () => {
   const navigate = useNavigate();
 
   return (
-    <motion.nav
-      className="flex flex-col fixed items-center justify-between left-0 
-        w-[3.2rem] h-[80vh] mt-16
+    <nav
+      className="flex flex-col mt-16 fixed items-center justify-between left-0 
+        w-[3.2rem] h-[80vh] 
         rounded-tr-3xl rounded-br-3xl object-none bg-gradient-to-t from-cyan-100 to-blue-400 bg-cover"
     >
       <button onClick={() => navigate("/")}>
@@ -41,7 +40,7 @@ const SideBar = () => {
           alt="projects"
         />
       </button>
-    </motion.nav>
+    </nav>
   );
 };
 

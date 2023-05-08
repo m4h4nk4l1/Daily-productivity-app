@@ -4,74 +4,72 @@ import { motion } from "framer-motion";
 import todo from "../assets/todo.jpg";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { BsCheckCircleFill } from "react-icons/bs";
-import {RiCheckboxBlankCircleLine} from  "react-icons/ri"
+import { RiCheckboxBlankCircleLine } from "react-icons/ri";
 import { TbTrash } from "react-icons/tb";
 
-const LOCAL_STORAGE_KEY = 'todo:tasks';
+const LOCAL_STORAGE_KEY = "todo:tasks";
 
 const Todo = () => {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
   const taskQuantity = tasks.length;
-  const completedTasks = tasks.filter(task => task.isCompleted).length;
+  const completedTasks = tasks.filter((task) => task.isCompleted).length;
 
   function loadSavedTasks() {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if(saved) {
+    if (saved) {
       setTasks(JSON.parse(saved));
     }
   }
 
   useEffect(() => {
     loadSavedTasks();
-  }, [])  
+  }, []);
 
   function setTasksAndSave(newTasks) {
     setTasks(newTasks);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks));
   }
 
-  
   function addTask(taskTitle) {
     setTasksAndSave([
       ...tasks,
       {
         id: crypto.randomUUID(),
         title: taskTitle,
-        isCompleted: false
+        isCompleted: false,
       },
     ]);
   }
-  
+
   function handleSubmit(event) {
     event.preventDefault();
     addTask(title);
     setTitle("");
   }
-  
+
   function changeTitle(event) {
     setTitle(event.target.value);
   }
-  
-  function toggleTaskCompletedById(taskId){
-    const newTasks = tasks.map(task => {
-      if(task.id === taskId){
+
+  function toggleTaskCompletedById(taskId) {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskId) {
         return {
           ...task,
-          isCompleted: !task.isCompleted
-        }
+          isCompleted: !task.isCompleted,
+        };
       }
       return task;
     });
     setTasksAndSave(newTasks);
   }
-  
-  function deleteTaskById(taskId){
-    const newTasks = tasks.filter(task => task.id !== taskId);
+
+  function deleteTaskById(taskId) {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
     setTasksAndSave(newTasks);
   }
-  
-  
+
   return (
     <motion.div
       initial={{ height: 0 }}
@@ -134,13 +132,23 @@ const Todo = () => {
         <>
           {tasks.map((task) => (
             <section className="flex flex-col" key={task.id}>
-              <div className="flex flex-row m-auto py-3 bg-blue-300 font-shan justify-between overflow-auto hover:border-black hover:border-solid rounded-md border-2 border-blue-300 my-5 w-[60%]">
-                <button className="pl-5" onClick={() => toggleTaskCompletedById(task.id)} >
-                  {task.isCompleted ? <BsCheckCircleFill /> : <RiCheckboxBlankCircleLine/>}
+              <div className="flex flex-row m-auto py-3 text-black bg-blue-300 font-shan justify-between overflow-auto hover:border-black hover:border-solid rounded-md border-2 border-blue-300 my-5 w-[60%]">
+                <button
+                  className="pl-5"
+                  onClick={() => toggleTaskCompletedById(task.id)}
+                >
+                  {task.isCompleted ? (
+                    <BsCheckCircleFill />
+                  ) : (
+                    <RiCheckboxBlankCircleLine />
+                  )}
                 </button>
                 <p contentEditable={true}>{task.title}</p>
-                <button className="pr-3" onClick={ () => deleteTaskById(task.id)}>
-                  <TbTrash  size={20} />
+                <button
+                  className="pr-3"
+                  onClick={() => deleteTaskById(task.id)}
+                >
+                  <TbTrash size={20} />
                 </button>
               </div>
             </section>

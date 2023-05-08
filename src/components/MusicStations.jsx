@@ -28,7 +28,8 @@ const MusicStations = ({
             onClick={Ncs}
             className="flex flex-row"
           >
-            {/* {StationName === "NCS" ? <ImPointRight className="mr-4" /> : ""} */}
+            {console.log(StationName)}
+            {StationName === "Ncs" ? <ImPointRight className="mr-4" /> : ""}
             NCS Renders
           </motion.div>
         </motion.div>
@@ -39,7 +40,7 @@ const MusicStations = ({
             onClick={Telugu}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Telugu" ? <ImPointRight className="mr-4" /> : ""}
             Telugu Songs Lofi
           </motion.div>
         </motion.div>
@@ -50,7 +51,7 @@ const MusicStations = ({
             onClick={Hindi}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Hindi" ? <ImPointRight className="mr-4" /> : ""}
             Hindi Songs Lofi
           </motion.div>
         </motion.div>
@@ -61,7 +62,7 @@ const MusicStations = ({
             onClick={Tamil}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Tamil" ? <ImPointRight className="mr-4" /> : ""}
             Tamil Songs Lofi
           </motion.div>
         </motion.div>
@@ -72,11 +73,11 @@ const MusicStations = ({
             whileTap={{ scale: 0.9 }}
             onClick={Malayalam}
           >
-            {/* {StationName === "Malayalam" ? (
+            {StationName === "Malayalam" ? (
               <ImPointRight className="mr-4" />
             ) : (
               ""
-            )} */}
+            )}
             Malayalam Songs Lofi
           </motion.div>
         </motion.div>
@@ -87,7 +88,7 @@ const MusicStations = ({
             onClick={Beach}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Beach" ? <ImPointRight className="mr-4" /> : ""}
             Beach Side Lofi
           </motion.div>
         </motion.div>
@@ -98,7 +99,7 @@ const MusicStations = ({
             onClick={Lofi}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Lofi" ? <ImPointRight className="mr-4" /> : ""}
             Lofi Girl
           </motion.div>
         </motion.div>
@@ -109,7 +110,7 @@ const MusicStations = ({
             onClick={Maan}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Maan" ? <ImPointRight className="mr-4" /> : ""}
             Maan Meri Jaan
           </motion.div>
         </motion.div>
@@ -120,7 +121,7 @@ const MusicStations = ({
             onClick={Random}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Random" ? <ImPointRight className="mr-4" /> : ""}
             Random Hindi Lofi
           </motion.div>
         </motion.div>
@@ -131,7 +132,7 @@ const MusicStations = ({
             onClick={Gaming}
             className="flex flex-row"
           >
-            <ImPointRight className="mr-4" />
+            {StationName === "Gaming" ? <ImPointRight className="mr-4" /> : ""}
             Gaming Lofi
           </motion.div>
         </motion.div>

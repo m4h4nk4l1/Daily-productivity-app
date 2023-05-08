@@ -84,8 +84,9 @@ const Shazam = () => {
       initial={{ height: 0 }}
       animate={{ height: "100%" }}
       exit={{ y: window.innerHeight, transition: { duration: 0.2 } }}
-      className="bg-gradient-to-b min-h-screen  from-cyan-100 to-blue-400 font-shan bg-cover"
+      className="bg-gradient-to-b min-h-screen  from-cyan-100 to-blue-400 font-shan bg-cover text-black"
     >
+      {/* Music Video player */}
       <div className="border-transparent bg-gradient-to-r from-cyan-100 to-blue-400 absolute rounded-lg w-2/3 mt-16 h-2/3 ml-24 shadow-slate-900 drop-shadow-2xl">
         <div
           className="rounded-lg overflow-hidden w-full h-full"
@@ -93,18 +94,18 @@ const Shazam = () => {
           onMouseLeave={handleMouseLeave}
         >
           <ReactPlayer
-            width="119%"
-            height="135%"
+            width="121%"
+            // heigh = 138.5
+            height="137.2%"
             playing={isPlaying}
-            loop="true"
+            loop={true}
             overflow="hidden"
             url={video}
             controls={true}
-            frameborder="0"
           />
         </div>
       </div>
-
+      {/* play & Pause buttons */}
       <section className=" absolute bottom-10 mt-4 border-transparent rounded-xl h-16 border-black w-2/3 ml-24 ">
         <div className="flex flex-row justify-center space-x-4">
           {isPlaying ? (
@@ -118,7 +119,7 @@ const Shazam = () => {
           )}
         </div>
       </section>
-
+      {/* // music stations */}
       <aside className="border-gray-800 border-l-2  mt-16 absolute w-1/5 h-5/6 right-10 ">
         <MusicStations
           Ncs={Ncs}
@@ -133,7 +134,6 @@ const Shazam = () => {
           Gaming={Gaming}
         />
       </aside>
-
       <Link to="/shazam"></Link>
     </motion.div>
   );
