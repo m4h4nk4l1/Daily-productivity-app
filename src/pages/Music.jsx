@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import MusicControls from "../components/MusicControls";
+import { IoPlay, IoPause } from "react-icons/io5";
 import MusicStations from "../components/MusicStations";
 import ReactPlayer from "react-player";
 
 const Shazam = () => {
-  const [stationName, setStationName] = useState("Lofi");
+  const [stationName, setStationName] = useState("Malayalam");
   const [video, setVideo] = useState(
-    `//www.youtube.com/embed/TURbeWK2wwg?autoplay=1&mute=1&start=1`
+    `//www.youtube.com/embed/LtbnCP9l5Z8?autoplay=1&mute=1&start=1`
   );
+
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+  };
+
+  const handleMouseEnter = (e) => {
+    e.currentTarget.style.pointerEvents = "none";
+  };
+
+  const handleMouseLeave = (e) => {
+    e.currentTarget.style.pointerEvents = "none";
+  };
 
   const Ncs = () => {
     setVideo("//www.youtube.com/embed/EOLbOsMgwjY?autoplay=1&mute=1&start=5");
@@ -69,20 +87,36 @@ const Shazam = () => {
       className="bg-gradient-to-b min-h-screen  from-cyan-100 to-blue-400 font-shan bg-cover"
     >
       <div className="border-transparent bg-gradient-to-r from-cyan-100 to-blue-400 absolute rounded-lg w-2/3 mt-16 h-2/3 ml-24 shadow-slate-900 drop-shadow-2xl">
-        <div className="rounded-lg overflow-hidden w-full h-full">
+        <div
+          className="rounded-lg overflow-hidden w-full h-full"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <ReactPlayer
-            width="110%"
-            height="124%"
-            playing="true"
+            width="119%"
+            height="135%"
+            playing={isPlaying}
             loop="true"
+            overflow="hidden"
             url={video}
+            controls={true}
             frameborder="0"
           />
         </div>
       </div>
 
       <section className=" absolute bottom-10 mt-4 border-transparent rounded-xl h-16 border-black w-2/3 ml-24 ">
-        <MusicControls />
+        <div className="flex flex-row justify-center space-x-4">
+          {isPlaying ? (
+            <button onClick={handlePause}>
+              <IoPause size={40} color="19376D" />
+            </button>
+          ) : (
+            <button onClick={handlePlay}>
+              <IoPlay size={40} color="19376D" />
+            </button>
+          )}
+        </div>
       </section>
 
       <aside className="border-gray-800 border-l-2  mt-16 absolute w-1/5 h-5/6 right-10 ">
