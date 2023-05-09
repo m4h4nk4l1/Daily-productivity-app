@@ -132,9 +132,10 @@ const Shazam = () => {
           Maan={Maan}
           Random={Random}
           Gaming={Gaming}
+          stationName={stationName}
         />
       </aside>
-      <Link to="/shazam"></Link>
+      {/* <Link to="/shazam"></Link> */}
     </motion.div>
   );
 };

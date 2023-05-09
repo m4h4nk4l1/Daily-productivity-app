@@ -23,10 +23,10 @@ const Home = () => {
         </span>
         <h2 className="font-bold text-3xl pt-10">I'm a software developer</h2>
         <p className="pt-8 font-medium">
-          Proficient in ReactJS, Tailwindcss, Redux and three building blocks of
-          the web. <br />
+          Proficient in Javascript, Typescript, React, NextJS, Tailwindcss,
+          Redux and two building blocks of the web. <br />
           <br />
-          Currently learning Typescript, Nextjs and focusing on Backend to
+          Currently learning ExpressJS, MongoDB, Node and focusing on Backend to
           become Fullstack Engineer. <br />
           <br />
           My work in code{" "}
