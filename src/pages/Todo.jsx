@@ -79,7 +79,7 @@ const Todo = () => {
     >
       {/* header and logo section call it header component */}
 
-      <section className="container  border-blue-400 w-[80%] h-[100%] border-2 mx-auto my-auto shadow-black shadow-xl ">
+      <section className="container border-transparent rounded-lg w-[80%] h-[100%] border-2 mx-auto my-auto shadow-neutral-900 shadow-xl ">
         <header className="flex flex-wrap my-6 items-center space-x-0 justify-center">
           <img className="w-20 h-auto" src={todo} alt="todo-icon" />
           <h2 className="font-shan text-2xl"> TODO </h2>

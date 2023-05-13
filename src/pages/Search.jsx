@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-// require("dotenv").config();
 
 const Search = () => {
-  let req = fetch();
+  let req = new Request(
+    `https://newsapi.org/v2/top-headlines?country=in&apiKey=${
+      import.meta.env.VITE_API_KEY
+    }`
+  );
+  fetch(req).then(function (response) {
+    console.log(response.json());
+  });
 
   return (
     <motion.div

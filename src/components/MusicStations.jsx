@@ -15,7 +15,6 @@ const MusicStations = ({
   Gaming,
   stationName,
 }) => {
-  console.log(stationName);
   return (
     <>
       <h1 className="pl-12 flex flex-col flex-wrap font-semibold mb-8 tracking-wide text-2xl">
