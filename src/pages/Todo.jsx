@@ -75,7 +75,7 @@ const Todo = () => {
       initial={{ height: 0 }}
       animate={{ height: "100%" }}
       exit={{ y: window.innerHeight, transition: { duration: 0.2 } }}
-      className="bg-gradient-to-b min-h-screen from-cyan-100 to-blue-400 bg-cover"
+      className="bg-gradient-to-b min-h-screen text-black from-cyan-100 to-blue-400 bg-cover"
     >
       {/* header and logo section call it header component */}
 
@@ -94,6 +94,7 @@ const Todo = () => {
             placeholder="Add a New Task"
             value={title}
             onChange={changeTitle}
+            required
           />
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold font-shan py-2 px-4 rounded flex align-middle items-center"
@@ -143,7 +144,7 @@ const Todo = () => {
                     <RiCheckboxBlankCircleLine />
                   )}
                 </button>
-                <p contentEditable={true}>{task.title}</p>
+                <p>{task.title}</p>
                 <button
                   className="pr-3"
                   onClick={() => deleteTaskById(task.id)}

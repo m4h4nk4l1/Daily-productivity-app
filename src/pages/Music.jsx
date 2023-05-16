@@ -84,7 +84,7 @@ const Shazam = () => {
       initial={{ height: 0 }}
       animate={{ height: "100%" }}
       exit={{ y: window.innerHeight, transition: { duration: 0.2 } }}
-      className="bg-gradient-to-b min-h-[200vh]  from-cyan-100 to-blue-400 font-shan bg-cover text-black"
+      className="bg-gradient-to-b min-h-screen from-cyan-100 to-blue-400 font-shan bg-cover text-black"
     >
       {/* Music Video player */}
       <div className="border-transparent bg-gradient-to-r from-cyan-100 to-blue-400 absolute rounded-lg w-2/3 mt-16 h-2/3 ml-24 shadow-slate-900 drop-shadow-2xl">
@@ -120,7 +120,7 @@ const Shazam = () => {
         </div>
       </section>
       {/* // music stations */}
-      <aside className="border-gray-800 border-l-2  mt-16 absolute w-1/5 h-5/6 right-10 ">
+      <aside className="border-gray-800 border-l-2  mt-16 absolute w-1/5 h-5/6 right-8 ">
         <MusicStations
           Ncs={Ncs}
           Telugu={Telugu}
