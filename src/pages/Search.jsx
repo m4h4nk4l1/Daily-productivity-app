@@ -1,22 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import NewsComponent from "../components/NewsComponent";
 
 const Search = () => {
-  async function requestNews() {
-    const res = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${
+  const [sourceName, setSourceName] = useState();
+  const [description, setDescription] = useState();
+  const [image, setImage] = useState();
+  const [url, setUrl] = useState();
+  const [jsonData, setJsonData] = useState([]);
+  useEffect(() => {
+    async function requestNews() {
+      const res = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=in&apiKey=${
+          import.meta.env.VITE_API_KEY
+        }`
+      );
+      const json = await res.json();
+      setJsonData(json.articles.slice(0, 9));
+      console.log(json);
+    }
+    requestNews();
+  }, []);
+  async function searchNews() {
+    const results = await fetch(
+      `https://newsapi.org/v2/everything?q=${searched}&apiKey=${
         import.meta.env.VITE_API_KEY
       }`
     );
-    const json = await res.json();
+    const result = await results.json();
+    console.log(result);
   }
-  console.log(json);
-
-  // const [sourceName, setSourceName] = useState();
-  // const [description, setDescription] = useState();
-  // const [image, setImage] = useState();
 
   return (
     <motion.div
@@ -73,17 +87,20 @@ const Search = () => {
         </form>
         {/* latest headlines */}
         <section className="mt-8 border border-transparent mb-8 rounded-lg text-justify">
-          <div className="grid grid-cols-3 gap-6">
-            <NewsComponent />
-            <NewsComponent />
-            <NewsComponent />
-            <NewsComponent />
-            <NewsComponent />
-            <NewsComponent />
-            <NewsComponent />
-            <NewsComponent />
-            <NewsComponent />
+          <div className="grid max-h-[100vh] grid-cols-3 gap-4">
+            {jsonData.map((article, index) => (
+              <NewsComponent
+                key={index}
+                setDescription={article.description}
+                setImage={article.urlToImage}
+                setSourceName={article.source.name}
+                setUrl={article.url}
+              />
+            ))}
           </div>
+          <h2 className="flex justify-center mt-20 items-center">
+            Search For more news.....
+          </h2>
         </section>
       </div>
 

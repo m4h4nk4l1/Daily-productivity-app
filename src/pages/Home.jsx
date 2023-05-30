@@ -26,7 +26,7 @@ const Home = () => {
           Proficient in Javascript, Typescript, React, NextJS, Tailwindcss,
           Redux and two building blocks of the web. <br />
           <br />
-          Currently learning ExpressJS, MongoDB, Node and focusing on Backend to
+          Currently learning Spring Boot, MongoDB and focusing on Backend to
           become Fullstack Engineer. <br />
           <br />
           My work in code{" "}

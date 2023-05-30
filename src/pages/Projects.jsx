@@ -23,11 +23,10 @@ const Projects = () => {
           <div className="text ml-8 flex flex-col">
             <h4 className="text-xl font-semibold">Crypto Explorer site</h4>
             <p className="">
-              Description of the project. This should be fairly concise while
-              also describing the key components that you developed or worked
-              on. It can be as long as you need it to be but should at least be
-              a few sentences long. Be sure to include specific links anywhere
-              in the description. Live link to the project{" "}
+              It is a cryptocurrency site where you can explore a wide range of
+              crypto coins like bitcoin with a cool user interface to navigate
+              through. It is developed using coingecko api. Live link to the
+              project{" "}
               <a
                 className="underline decoration-auto hover:no-underline"
                 href="https://642d8bcddb12244c5445799f--cryto-explorer-m4h4nk4l1.netlify.app/"
@@ -94,12 +93,13 @@ const Projects = () => {
               Multiple Javascript Features
             </h3>
             <p>
-              It is a online purchasing construction material ecommerce site
-              where you can purchase different construction materials of
-              different brands listed. It is a frontend website with
+              It consists of multiple online web app features that can be used
+              like animated templates, infinity scroll, light-dark mode,
+              picture-in-picture, text to speech etc. Code for these features is
+              in
               <a
                 className="underline decoration-auto hover:no-underline"
-                href="https://github.com/m4h4nk4l1/reactJS-construction"
+                href="https://github.com/m4h4nk4l1/Javascript-practice"
               >
                 Link
               </a>
